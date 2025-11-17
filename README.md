@@ -5,3 +5,30 @@ A microservice that generates Ed25519 key pairs, signs data, and verifies digita
 ## Team
 - Kairon Johnson
 - Thao Nguyen
+
+
+## Usage / Testing Instructions
+# Key Generation Service (CS361)
+
+FastAPI microservice providing Ed25519 key generation, signing, and verification.
+
+## Setup
+
+1. Create and activate a Python virtual environment:
+
+`
+python3 -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+`
+
+2. Install dependencies
+
+`
+pip install -r requirements.txt
+`
+
+## Running the Server
+
+`
+fastapi dev main.py
+`
