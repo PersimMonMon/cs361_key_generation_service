@@ -38,7 +38,7 @@ After spinning up the server as described above, to be able to interact with the
 Here is an example of a service sending a request for a key pair, and printing out the keys from the returned json object.
 
 ### 1) Generate an Ed25519 Key Pair
-`
+```
 import requests
 
 url = "http://127.0.0.1:8000/generateKeyPair"
@@ -49,7 +49,7 @@ data = response.json
 
 print("Public key:", data["public_key"])
 print("Private key:", data["Private_key"])
-`
+```
 
 ### Expectecd Response
 `
@@ -59,7 +59,7 @@ print("Private key:", data["Private_key"])
 }
 `
 ### 2) Sign data using a private key
-`
+```
 import requests
 
 url = "http://127.0.0.1:8000/signData"
@@ -72,7 +72,7 @@ response = requests.post(url, json=payload)
 data = response.json()
 
 print("Generated Signature:", data["signature"])
-`
+```
 
 ### Expected Response
 `
@@ -82,7 +82,8 @@ print("Generated Signature:", data["signature"])
 `
 
 ### 3) Verify digital signature
-`import requests
+```
+import requests
 
 url = "http://127.0.0.1:8000/verifySignature"
 payload = {
@@ -95,7 +96,7 @@ response = requests.post(url, json=payload)
 data = response.json()
 
 print("Is the signature valid?", data["valid"])
-`
+```
 
 ### Expected Response
 `
