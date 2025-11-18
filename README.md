@@ -32,3 +32,19 @@ pip install -r requirements.txt
 `
 fastapi dev main.py
 `
+
+##Requesting and recieving data
+After spinning up the server as described above, to be able to interact with the service, your program most be able to send REST API requests containing JSON. The service will then respond by sending a json object containing the specific data requested.
+Here is an example of a service sending a request for a key pair, and printing out the keys from the returned json object.
+`
+import requests
+
+url = "http://127.0.0.1:8000/generateKeyPair"
+payload = {"algorithm": "Ed25519"}
+
+response = requests.post(url, json=payload)
+data = response.json
+
+print("Public key:", data["public_key"])
+print("Private key:", data["Private_key"])
+`
